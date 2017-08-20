@@ -7,6 +7,7 @@ touch /.first-run
 export JICOFO_SECRET=`pwgen -s 16 1`
 export JVB_SECRET=`pwgen -s 16 1`
 export FOCUS_SECRET=`pwgen -s 16 1`
+export LOCAL_IP=`grep $(hostname) /etc/hosts | cut -f1`
 
 # Substitute configuration
 for VARIABLE in `env | cut -f1 -d=`; do
