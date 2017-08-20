@@ -55,7 +55,7 @@ The following configuration variables are expected in the environment.
 | `STUN` | yes | DNS name to a STUn server | stun.myprovider.com |
 | `BRIDGE_IP` | yes | Public IP exposing bridge ports | 1.2.3.4 |
 | `BRIDGE_TCP_PORT` | no (4443) | Exposed bridge TCP port | 4443 |
-| `BRIDGE_UDP_PORT | no (10000) | Exposed bridge UDP port | 10000 |
+| `BRIDGE_UDP_PORT` | no (10000) | Exposed bridge UDP port | 10000 |
 
 ## Limitations
 
