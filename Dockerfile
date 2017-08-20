@@ -13,10 +13,14 @@ RUN rm -rf /etc/nginx/sites-enabled/* \
  && rm -rf /etc/prosody/conf.d/*
 
 COPY config/jitsi /etc/jitsi
+RUN chown -R jicofo: /etc/jitsi/jicofo \
+ && chown -R jvb: /etc/jitsi/videobridge
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/prosody.cfg.lua /etc/prosody/prosody.cfg.lua
 
 COPY start.sh /start.sh
+
+ENV DOMAIN=test.com STUN=stun.test.com
 
 CMD /start.sh

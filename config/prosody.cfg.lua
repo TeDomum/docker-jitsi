@@ -1,7 +1,9 @@
 -- Prosody Configuration File
 
-admins = { }
+admins = { "focus@auth.video.test.com" }
 modules_enabled = {
+	"roster"; -- Allow users to have a roster. Recommended ;)
+	"saslauth"; -- Authentication for clients and servers. Recommended if you want to log in.
 	"disco"; -- Service discovery
 	"private"; -- Private XML storage (for room bookmarks, etc.)
 	"vcard"; -- Allow users to set vCards
@@ -12,13 +14,17 @@ modules_enabled = {
 	"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
 	"http_files"; -- Serve static files from a directory over HTTP
 	"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
+	"admin_adhoc"; -- Allows administration via an XMPP client that supports ad-hoc commands
+
+	"lastactivity";
+	"offline";
+	"pubsub";
+	"adhoc";
 };
 
 -- These modules are auto-loaded, but should you want
 -- to disable them then uncomment them here:
 modules_disabled = {
-	"offline"; -- Store offline messages
-	"s2s"; -- Handle server-to-server connections
 };
 
 allow_registration = false;
@@ -49,7 +55,6 @@ VirtualHost "{{ DOMAIN }}"
 Component "conference.{{ DOMAIN }}" "muc"
     storage = "null"
     --modules_enabled = { "token_verification" }
-admins = { "focus@auth.{{ DOMAIN }}" }
 
 Component "jitsi-videobridge.{{ DOMAIN }}"
     component_secret = "{{ JVB_SECRET }}"
