@@ -27,6 +27,7 @@ modules_enabled = {
 modules_disabled = {
 };
 
+interfaces = { "127.0.0.1", "::1" }
 allow_registration = false;
 daemonize = true;
 pidfile = "/var/run/prosody/prosody.pid";
