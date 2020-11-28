@@ -22,5 +22,5 @@ fi
 # TODO: improve process management
 /etc/init.d/prosody restart
 /etc/init.d/jicofo restart
-/etc/init.d/jitsi-videobridge restart
+/etc/init.d/jitsi-videobridge2 restart
 exec nginx -g 'daemon off;'
